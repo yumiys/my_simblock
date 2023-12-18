@@ -124,11 +124,12 @@ result_graphディレクトリに4つの結果（グラフ）が保存されま�
 
 | プログラム名  | 役割 |
 | ------------- | ------------- |
-|  All_simulation.py  | repeat_simulation.pyとanalyse_results.pyをまとめて実行  |
+|  All_simulation.py  | repeat_simulation.pyとrun_analyses.pyを一括で実行  |
 | repeat_simulation.py  | シミュレーションの実行と、その結果を指定した場所に保存  |
-| analyse_results.py  | calculate_average_block_propagation_time.pyとcalculate_fork_probability.pyの実行と、グラフの生成  |
-| calculate_average_block_propagation_time.py  | 平均ブロック伝搬時間Mを計算し、Average_timeディレクトリに保存  |
-| calculate_fork_probability.py  | フォーク確率Pforkを計算し、Fork_probabilityディレクトリに保存  |
+| run_analyses.py  | calculate_average_block_propagation_time.pyとcalculate_fork_probability.pyとcalculate_performance.pyを一括で実行  |
+| calculate_average_block_propagation_time.py  | 平均ブロック伝搬時間Mを計算し、results_graphディレクトリへグラフの出力, 数値をAverage_timeディレクトリに保存 |
+| calculate_fork_probability.py  | フォーク確率Pforkを計算し、results_graphディレクトリへグラフの出力, 数値をFork_probabilityディレクトリに保存  |
+| calculate_performance.py  | パフォーマンスPを計算し、results_graphディレクトリへグラフの出力  |
 | para.py  | パラメータの変更  |
 | dust.py  | シミュレーションの過程で生成されたファイルを一括削除する  |
 
@@ -137,6 +138,7 @@ result_graphディレクトリに4つの結果（グラフ）が保存されま�
 | プログラム名  | 役割 |
 | ------------- | ------------- |
 |  count.py  | ディレクトリの数や、ファイルの数を数えるための関数まとめ  |
-| explain_text.py  | settings_note.txtに関するすべて  |
+| explain_text.py  | settings_note.txtに関係する関数の定義  |
+| simple_cmd.py  | メインプログラムの行数削減のため、コマンド実行を簡略化する関数を定義  |
 | for_plot.py | プロット関係のコードを一括管理  |
 
