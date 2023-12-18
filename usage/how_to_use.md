@@ -25,28 +25,34 @@ $python3 dust.py
 ## 1-b. 個別の実行方法
 四段階に分かれています。
 
-1から順に実行してください。2-1,2-2のみ順不同です。
+1から順に実行してください。2-1,2-2,3はまとめて実行することもできます。
 
 1. シミュレーションの実行
 ```
 $python3 repeat_simulation.py
 ```
-2-1. フォーク確率の計算
+2-1. フォーク確率の計算＋グラフの出力
 ```
 $ python3 calculate_fork_probability.py ./blocklists/*
 ```
-2-2. 平均ブロック伝搬時間の計算
+2-2. 平均ブロック伝搬時間の計算＋グラフの出力
 ```
 $ python3 calculate_average_block_propagation_time.py ./stdouts/*
 ```
-3. パフォーマンスの計算とグラフの出力
+3. パフォーマンスの計算＋グラフの出力
 ```
-$ python3 analyse_results.py
+$ python3 calculate_performance.py
 ```
+※2以降をまとめて実行
+```
+$ python3 run_analyses.py
+```
+
+
 
 ## 2. パラメータの変更方法
 ### ◆para.pyから変えられるもの
-**ブロック伝搬時間、ノード数、変更しているパラメータの数値範囲（リスト）（と変更しているパラメータの名前）**
+**ブロック伝搬時間、伝搬率、ノード数、変更しているパラメータの数値範囲（リスト）（と変更しているパラメータの名前）**
 
 
 + parameter_list : 変更したパラメータの数値範囲を変更できます(単位B)
@@ -58,7 +64,12 @@ $ python3 analyse_results.py
 > 例:10分から5分にしたいとき
 >
 > interval = 1000×60×10 →　interval = 1000×60×5
-> 
+>
++ propagation_rate : ノード全体に対して、どれくらいブロックを伝搬させるかを指定できます(割合で指定)
+> 例:10割から5割にしたいとき
+>
+> propagation_rate = 1.0 → propagation_rate = 0.5
+>
 + node_num : 任意のノード数を指定できます
 > 例:300個から400個にしたいとき
 >
