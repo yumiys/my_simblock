@@ -25,28 +25,34 @@ $python3 dust.py
 ## 1-b. 個別の実行方法
 四段階に分かれています。
 
-1から順に実行してください。2-1,2-2のみ順不同です。
+1から順に実行してください。2-1,2-2,3はまとめて実行することもできます。
 
 1. シミュレーションの実行
 ```
 $python3 repeat_simulation.py
 ```
-2-1. フォーク確率の計算
+2-1. フォーク確率の計算＋グラフの出力
 ```
 $ python3 calculate_fork_probability.py ./blocklists/*
 ```
-2-2. 平均ブロック伝搬時間の計算
+2-2. 平均ブロック伝搬時間の計算＋グラフの出力
 ```
 $ python3 calculate_average_block_propagation_time.py ./stdouts/*
 ```
-3. パフォーマンスの計算とグラフの出力
+3. パフォーマンスの計算＋グラフの出力
 ```
-$ python3 analyse_results.py
+$ python3 calculate_performance.py
 ```
+※2以降をまとめて実行
+```
+$ python3 run_analyses.py
+```
+
+
 
 ## 2. パラメータの変更方法
 ### ◆para.pyから変えられるもの
-**ブロック伝搬時間、ノード数、変更しているパラメータの数値範囲（リスト）（と変更しているパラメータの名前）**
+**ブロック伝搬時間、伝搬率、ノード数、変更しているパラメータの数値範囲（リスト）（と変更しているパラメータの名前）**
 
 
 + parameter_list : 変更したパラメータの数値範囲を変更できます(単位B)
@@ -58,7 +64,12 @@ $ python3 analyse_results.py
 > 例:10分から5分にしたいとき
 >
 > interval = 1000×60×10 →　interval = 1000×60×5
-> 
+>
++ propagation_rate : ノード全体に対して、どれくらいブロックを伝搬させるかを指定できます(割合で指定)
+> 例:10割から5割にしたいとき
+>
+> propagation_rate = 1.0 → propagation_rate = 0.5
+>
 + node_num : 任意のノード数を指定できます
 > 例:300個から400個にしたいとき
 >
@@ -113,11 +124,12 @@ result_graphディレクトリに4つの結果（グラフ）が保存されま�
 
 | プログラム名  | 役割 |
 | ------------- | ------------- |
-|  All_simulation.py  | repeat_simulation.pyとanalyse_results.pyをまとめて実行  |
+|  All_simulation.py  | repeat_simulation.pyとrun_analyses.pyを一括で実行  |
 | repeat_simulation.py  | シミュレーションの実行と、その結果を指定した場所に保存  |
-| analyse_results.py  | calculate_average_block_propagation_time.pyとcalculate_fork_probability.pyの実行と、グラフの生成  |
-| calculate_average_block_propagation_time.py  | 平均ブロック伝搬時間Mを計算し、Average_timeディレクトリに保存  |
-| calculate_fork_probability.py  | フォーク確率Pforkを計算し、Fork_probabilityディレクトリに保存  |
+| run_analyses.py  | calculate_average_block_propagation_time.pyとcalculate_fork_probability.pyとcalculate_performance.pyを一括で実行  |
+| calculate_average_block_propagation_time.py  | 平均ブロック伝搬時間Mを計算し、results_graphディレクトリへグラフの出力, 数値をAverage_timeディレクトリに保存 |
+| calculate_fork_probability.py  | フォーク確率Pforkを計算し、results_graphディレクトリへグラフの出力, 数値をFork_probabilityディレクトリに保存  |
+| calculate_performance.py  | パフォーマンスPを計算し、results_graphディレクトリへグラフの出力  |
 | para.py  | パラメータの変更  |
 | dust.py  | シミュレーションの過程で生成されたファイルを一括削除する  |
 
@@ -125,7 +137,8 @@ result_graphディレクトリに4つの結果（グラフ）が保存されま�
 **サブ**
 | プログラム名  | 役割 |
 | ------------- | ------------- |
-|  count.py  | ディレクトリの数や、ファイルの数を数えるための関数まとめ  |
-| explain_text.py  | settings_note.txtに関するすべて  |
-| for_plot.py | プロット関係のコードを一括管理  |
+|  count.py  | ディレクトリの数や、ファイルの数を数えるための関数を定義  |
+| explain_text.py  | settings_note.txtに関係する関数の定義  |
+| simple_cmd.py  | メインプログラムの行数削減のため、コマンド実行を簡略化する関数を定義  |
+| for_plot.py | メインプログラムの行数削減のため、プロットに関する行をまとめた関数を定義  |
 

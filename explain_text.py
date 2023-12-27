@@ -17,9 +17,10 @@ def mk_note():
     s2 = '\nnode num : '+ str(para.node_num)+'[個]'
     s3 = '\nchange para : '+ para.paraname_list[para.paranum]
     s4 = '\nparalist : '+ str(para.parameter_list)+' [Byte]'
+    s5 = '\npropagation_rate :'+str(para.propagation_rate)+'[割合]'
 
     with open(path_w, mode='w') as f:
-        f.write(s0+s1+s2+s3+s4)
+        f.write(s0+s1+s2+s3+s4+s5)
 
 
 

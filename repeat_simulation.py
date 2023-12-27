@@ -1,3 +1,7 @@
+#
+# How to run: $ python3 repeat_simulation.py
+#
+
 import count
 import explain_text
 import para

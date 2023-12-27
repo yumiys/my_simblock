@@ -8,6 +8,7 @@ print('running...')
 # run the simulation
 simple_cmd.command('python3 repeat_simulation.py')
 
+print('start analysis')
 # analyze the results
 simple_cmd.command('python3 run_analyses.py')
 
