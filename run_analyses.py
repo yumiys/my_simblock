@@ -3,8 +3,8 @@ import count
 import simple_cmd
 
 
-# execution calculate_average_block_propagation_time.py
-simple_cmd.command('python3 calculate_average_block_propagation_time.py ./stdouts/*')
+# execution calculate_average_blockprop_time.py
+simple_cmd.command('python3 calculate_average_blockprop_time.py ./stdouts/*')
 
 # execution calculate_fork_probability.py
 simple_cmd.command('python3 calculate_fork_probability.py ./blocklists/*')

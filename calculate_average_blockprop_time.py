@@ -1,5 +1,5 @@
 #
-# How to run: $ python3 calculate_average_block_propagation_time.py ./stdouts/*
+# How to run: $ python3 calculate_average_blockprop_time.py ./stdouts/*
 #
 
 import numpy as np
