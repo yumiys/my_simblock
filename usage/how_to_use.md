@@ -3,10 +3,24 @@
 ```
 my_simblock
 +-- Average_time
-    +-- average_time.txt
+|   +-- average_time.txt
 +-- Fork_probability
-    +-- forkprobability.txt
+|   +-- forkprobability.txt
 +-- Blocklists
+|   +-- blockList-0000100000
+|   +-- blockList-0000500000
+|   :
+|   +-- blockList-1000000000
++-- Stdouts
+|   +-- result-0000100000
+|   +-- result-0000500000
+|   :
+|   +-- result-1000000000
++-- Results_graph
+|   +-- file(n)
++-- simblock
+|   +-- ...
+
 ```
 
 ## 2-a. プログラムの実行方法
