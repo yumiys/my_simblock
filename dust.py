@@ -1,12 +1,6 @@
 import subprocess
 import count
 
-# Program to erase execution results
-#
-# Don't forget to run
-# to avoid retaining previous results
-#
-
 # x is the directory location
 def del_results(x):
     cmd = 'rm {}/*.txt'.format(x)
@@ -22,7 +16,7 @@ def del_results(x):
 del_results('./Average_time')
 # fork_probability.txt
 del_results('./Fork_probability')
-# stdouts files
-del_results('./stdouts')
-# blocklists files
-del_results('./blocklists')
+# ./Stdouts files
+del_results('./Stdouts')
+# ./Blocklists files
+del_results('./Blocklists')

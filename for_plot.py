@@ -7,10 +7,10 @@ import count
 # file_name : file name when outputting
 
 def plt_set(x, y, color, ylab ,file_name):
-    #default[width:6.4, height:4.8]
+    # default[width:6.4, height:4.8]
     plt.figure(figsize=(7,4))
     
-    #call before plt.plot(x,y)
+    # call before plt.plot(x,y)
     plt.rcParams['xtick.direction']='in' 
     plt.rcParams['ytick.direction']='in'
     
@@ -21,10 +21,9 @@ def plt_set(x, y, color, ylab ,file_name):
     
     plt.plot(x, y, color='{}'.format(color), ls= '-', marker='.')
     plt.xscale('log')
-    
     plt.xlabel('blocksize [B.]')
     plt.ylabel(ylab)
     
-    n = count.countdir('./results_graph/')
-    plt.savefig('./results_graph/file{}/{}'.format(n, file_name))
+    n = count.countdir('./Results_graph/')
+    plt.savefig('./Results_graph/file{}/{}'.format(n, file_name))
     plt.clf()

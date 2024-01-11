@@ -8,10 +8,10 @@ def save_file_at_dir(dir_path, filename, file_content, mode='w'):
         f.write(file_content)
 
 def mk_note():    
-    dirnum = count.countdir('./results_graph/')
-    save_file_at_dir('./results_graph/file{}'.format(dirnum), 'settings_note.txt', 'Parameter notes')
+    dirnum = count.countdir('./Results_graph/')
+    save_file_at_dir('./Results_graph/file{}'.format(dirnum), 'settings_note.txt', 'Parameter notes')
 
-    path_w = './results_graph/file{}/settings_note.txt'.format(dirnum)
+    path_w = './Results_graph/file{}/settings_note.txt'.format(dirnum)
     s0 = 'timestamp : '+str(datetime.datetime.now())
     s1 = '\n\ninterval : '+ str(para.interval/(1000*60))+'[min]'
     s2 = '\nnode num : '+ str(para.node_num)+'[個]'

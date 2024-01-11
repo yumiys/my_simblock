@@ -1,5 +1,6 @@
 import os
 
+# x : file location
 def countfile(x):
     dir = '{}'.format(x)
     count_file = 0
@@ -9,6 +10,7 @@ def countfile(x):
             count_file += 1
     return count_file
 
+# y : directory location
 def countdir(y):
     path = y
     dirnum_list = []

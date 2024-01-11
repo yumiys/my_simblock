@@ -1,7 +1,0 @@
-timestamp : 2023-12-27 14:32:38.882989
-
-interval : 5.0[min]
-node num : 5000[個]
-change para : Blocksize
-paralist : [100000, 500000, 1000000, 5000000, 10000000, 50000000, 100000000, 500000000, 1000000000] [Byte]
-propagation_rate :0.75[割合]

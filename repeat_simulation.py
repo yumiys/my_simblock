@@ -7,13 +7,14 @@ import explain_text
 import para
 import simple_cmd
 
+# define variables and lists
+blocksize_list = []
 para_list = para.paraname_list
 now_para = para_list[para.paranum]
 interval = para.interval
 blocknum = para.node_num
 
-# calling list of para.py
-blocksize_list = []
+# read blocksize from para.py
 for i in para.parameter_list:
     blocksize_list.append(i)
 
@@ -36,23 +37,23 @@ for blocksize in blocksize_list:
     result = simple_cmd.command('cd simblock; gradle :simulator:run; cd ..')
 
     # save blockList.txt into blocklists directory
-    simple_cmd.command('cp ./simblock/simulator/src/dist/output/blockList.txt ./blocklists/blockList-{}{:010}.txt'.format(now_para, blocksize))
+    simple_cmd.command('cp ./simblock/simulator/src/dist/output/blockList.txt ./Blocklists/blockList-{}{:010}.txt'.format(now_para, blocksize))
 
     # output result
-    stdoutfilename = './stdouts/result-{}{:010}.txt'.format(now_para, blocksize)
+    stdoutfilename = './Stdouts/result-{}{:010}.txt'.format(now_para, blocksize)
     with open(stdoutfilename, 'w') as stdoutfile:
         stdoutfile.write(result.stdout.decode())
         
 # create a directory to save results
-dirnum = count.countdir('./results_graph/')
-simple_cmd.command('mkdir ./results_graph/file{}'.format(dirnum+1))
+dirnum = count.countdir('./Results_graph/')
+simple_cmd.command('mkdir ./Results_graph/file{}'.format(dirnum+1))
 
 # create explanatory txt.file
 explain_text.mk_note()
 
 # check if output file exists  
-filenum1 = count.countfile('./blocklists')
-filenum2 = count.countfile('./stdouts')
+filenum1 = count.countfile('./Blocklists')
+filenum2 = count.countfile('./Stdouts')
 if filenum1 == len(para.parameter_list) and filenum2 == len(para.parameter_list):
     print('Successfully executed a program called repeat_simulation.py')
 else:
