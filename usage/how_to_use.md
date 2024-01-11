@@ -7,15 +7,15 @@ my_simblock
 +-- Fork_probability
 |   +-- forkprobability.txt
 +-- Blocklists
-|   +-- blockList-0000100000
-|   +-- blockList-0000500000
+|   +-- blockList-Blocksize0000100000
+|   +-- blockList-Blocksize0000500000
 |   :
-|   +-- blockList-1000000000
+|   +-- blockList-Blocksize1000000000
 +-- Stdouts
-|   +-- result-0000100000
-|   +-- result-0000500000
+|   +-- result-Blocksize0000100000
+|   +-- result-Blocksize0000500000
 |   :
-|   +-- result-1000000000
+|   +-- result-Blocksize1000000000
 +-- Results_graph
 |   +-- file(n)
 +-- simblock
