@@ -1,6 +1,29 @@
 # 使い方
+## 1-a. ディレクトリ構成
+```
+my_simblock
++-- Average_time
+|   +-- average_time.txt
++-- Fork_probability
+|   +-- forkprobability.txt
++-- Blocklists
+|   +-- blockList-Blocksize0000100000
+|   +-- blockList-Blocksize0000500000
+|   :
+|   +-- blockList-Blocksize1000000000
++-- Stdouts
+|   +-- result-Blocksize0000100000
+|   +-- result-Blocksize0000500000
+|   :
+|   +-- result-Blocksize1000000000
++-- Results_graph
+|   +-- file(n)
++-- simblock
+|   +-- ...
 
-## 1-a. プログラムの実行方法
+```
+
+## 2-a. プログラムの実行方法
 ```
 $python3 All_simulation.py
 ```
@@ -22,7 +45,7 @@ $python3 dust.py
 
 **sesult_graphに出力されたグラフはすべて残るので、安心して消してください。**
 
-## 1-b. 個別の実行方法
+## 2-b. 個別の実行方法
 四段階に分かれています。
 
 1から順に実行してください。2~4はまとめて実行することもできます。
@@ -50,7 +73,7 @@ $ python3 run_analyses.py
 
 
 
-## 2. パラメータの変更方法
+## 3. パラメータの変更方法
 ### ◆para.pyから変えられるもの
 **ブロック伝搬時間、伝搬率、ノード数、変更しているパラメータの数値範囲（リスト）（と変更しているパラメータの名前）**
 
@@ -95,7 +118,7 @@ $ python3 run_analyses.py
 
 **横軸に取りたい値（今回のブロックサイズにあたるもの）を変更する場合はrepeat_simulation.pyの書き換えが必要です。**
 
-## 3. 結果の見方
+## 4. 結果の見方
 result_graphディレクトリに4つの結果（グラフ）と1つのテキストファイルが保存されます。
 
 > result_graph内のfile(n)のnは、
@@ -119,7 +142,7 @@ result_graphディレクトリに4つの結果（グラフ）と1つのテキス
 
 + settings_note.txt : 実行時のタイムスタンプとパラメータについての記録（1.実行方法を参照）
 
-## 4. 各プログラムの関係性
+## 5. 各プログラムの関係性
 **メイン**
 
 | プログラム名  | 役割 |
