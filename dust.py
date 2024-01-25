@@ -1,7 +1,7 @@
 import subprocess
 import count
 
-# x is the directory location
+# x : directory location
 def del_results(x):
     cmd = 'rm {}/*.txt'.format(x)
     result = subprocess.run(cmd, stdout=subprocess.PIPE, shell=True)

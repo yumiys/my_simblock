@@ -96,6 +96,7 @@ public class SimulationConfiguration {
   /**
    * Compact block size. (unit: byte)
    */
+	/*public static final long COMPACT_BLOCK_SIZE = 18 * 1000; // 18KB*/
 	public static final long COMPACT_BLOCK_SIZE = 18 * 1000; // 18KB
 	/**
    * CBR failure rate for a node that always connect network.

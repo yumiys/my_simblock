@@ -23,3 +23,6 @@ if os.path.isdir(dir_path) == True and filenum == 4+1:
     print('Successfully executed a program called analyse_results.py')
 else:
     print('Analysis failed')
+    
+
+    

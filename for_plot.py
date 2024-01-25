@@ -27,3 +27,5 @@ def plt_set(x, y, color, ylab ,file_name):
     n = count.countdir('./Results_graph/')
     plt.savefig('./Results_graph/file{}/{}'.format(n, file_name))
     plt.clf()
+    
+    

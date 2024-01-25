@@ -5,3 +5,6 @@ def command(x):
     cmd = '{}'.format(x)
     result = subprocess.run(cmd, stdout=subprocess.PIPE, shell=True)
     return result
+    
+    
+
